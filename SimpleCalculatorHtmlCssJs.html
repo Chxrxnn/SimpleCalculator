@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Concept</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: linear-gradient(to right, rgb(82, 233, 238), lightpink)
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="button"] {
+            margin: 0px 5px 0px 5px;
+            height: 40px;
+            width: 45px;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 700;
+            transition: all .3s ease-out;
+            border: 2px solid black;
+        }
+
+        input[type="button"]:hover {
+            box-shadow: 0px 0px 3px 1px black;
+            cursor: pointer;
+        }
+
+        input[type="button"]:active {
+            transform: scale(.9);
+        }
+
+        div {
+            margin-bottom: 10px;
+
+        }
+
+        form {
+            /*   width:40%;
+            margin: auto;*/
+            border: 2px solid black;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #d62121;
+        }
+
+        input[type="text"] {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #c3c4b8dc;
+            color: black;
+            box-sizing: border-box;
+
+        }
+
+        .equal {
+            background-color: #c05caf;
+            border: 2px solid black;
+
+        }
+
+        .special {
+            background-color: #49be8d;
+        }
+
+        .del {
+            background-color: #945e5e;
+        }
+
+        .numpadbtn {
+            background-color: #d49041;
+        }
+
+        .operator {
+            background-color: #1cc90c;
+        }
+
+        .ac {
+            background-color: #fff12b;
+        }
+
+        /* .bottom{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+        }*/
+        input[value="="] {
+            width: 104px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="display">
+                <input type="text" name="display" disabled>
+            </div>
+            <div>
+                <input type="button" value="AC" class="ac" onclick="display.value=''">
+                <input type="button" value="Del" class="del"
+                    onclick="display.value=display.value.toString().slice(0,-1)">
+                <input type="button" value="." class="operator" onclick="display.value+='.'">
+                <input type="button" value="/" class="operator" onclick="display.value+='/'">
+            </div>
+
+            <div>
+                <input type="button" value="7" class="numpadbtn" onclick="display.value+='7'">
+                <input type="button" value="8" class="numpadbtn" onclick="display.value+='8'">
+                <input type="button" value="9" class="numpadbtn" onclick="display.value+='9'">
+                <input type="button" value="*" class="operator" onclick="display.value+='*'">
+            </div>
+
+            <div>
+                <input type="button" value="4" class="numpadbtn" onclick="display.value+='4'">
+                <input type="button" value="5" class="numpadbtn" onclick="display.value+='5'">
+                <input type="button" value="6" class="numpadbtn" onclick="display.value+='6'">
+                <input type="button" value="-" class="operator" onclick="display.value+='-'">
+            </div>
+
+            <div>
+                <input type="button" value="1" class="numpadbtn" onclick="display.value+='1'">
+                <input type="button" value="2" class="numpadbtn" onclick="display.value+='2'">
+                <input type="button" value="3" class="numpadbtn" onclick="display.value+='3'">
+                <input type="button" value="+" class="operator" onclick="display.value+='+'">
+            </div>
+
+            <div class="bottom">
+                <input type="button" value="00" class="special" onclick="display.value+='00'">
+                <input type="button" value="0" class="special" onclick="display.value+='0'">
+                <input type="button" value="=" class="equal" onclick="display.value=eval(display.value)">
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let s = "Charandeep Singh";
+        /*el=document.getElementsByClassName("display");
+        el[0].innerHTML=s.slice(0,-1);*/
+    </script>
+</body>
+
+</html>
